@@ -5,8 +5,6 @@ export function classNames(
   mods: Mods,
   additionals: string[]
 ): string {
-  console.log(cls);
-
   return [
     cls,
     ...additionals,

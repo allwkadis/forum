@@ -1,4 +1,4 @@
-import { useContext} from "react";
+import { useContext } from "react";
 
 import { THEME, ThemeContext, LOCAL_STORAGE_THEME_KEY } from "./ThemeContext";
 
@@ -12,7 +12,7 @@ export const useTheme = (): IUseTheme => {
 
   const toogleTheme = () => {
     const newTheme = theme === THEME.DARK ? THEME.LIGHT : THEME.DARK;
-    setTheme(newTheme)
+    setTheme(newTheme);
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
 

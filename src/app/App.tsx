@@ -1,12 +1,10 @@
-import { useTheme } from "../theme /useTheme";
-import { Test } from "../widget/Test/Test";
-import { useTest } from "./providers/useTest";
-import { classNames } from "../helpers/classNames";
+import { useTheme } from "./providers/ThemeProvider";
+import { classNames } from "../shared/lib/classNames";
+
 import "./styles/index.css";
 
 function App() {
-  const { theme, toogleTheme } = useTheme();
-  const { aboba } = useTest();
+  const { theme, toogleTheme } = useTheme(); //управление темой
 
   return (
     <>
@@ -19,8 +17,6 @@ function App() {
         <button onClick={toogleTheme}>switch theme</button>
         <p>aboba</p>
         <p>APPLE</p>
-        {`aboba: ${aboba}`}
-        <Test />
       </div>
     </>
   );
