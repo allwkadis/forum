@@ -1,22 +1,16 @@
 import { useTheme } from "./providers/ThemeProvider";
 import { classNames } from "../shared/lib/classNames";
+import { AppRouter } from "./providers/RouterProvider";
 
 import "./styles/index.css";
 
 function App() {
-  const { theme, toogleTheme } = useTheme(); //управление темой
+  const { theme } = useTheme();
 
   return (
     <>
-      <div
-        className={classNames("app", { hovered: true, backdrop: false }, [
-          theme,
-          "aboba",
-        ])}
-      >
-        <button onClick={toogleTheme}>switch theme</button>
-        <p>aboba</p>
-        <p>APPLE</p>
+      <div className={classNames("app", {}, [theme])}>
+        <AppRouter />
       </div>
     </>
   );
