@@ -6,6 +6,6 @@
 .app {
   min-height: 100vh;
   font: var(--font-l);
-  color: var(--secondary-color);
+  color: var(--primary-color);
   background: var(--bg-color);
 }

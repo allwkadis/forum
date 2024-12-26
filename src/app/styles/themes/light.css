@@ -1,6 +1,6 @@
 .app.light {
   --bg-color: #fcfbfb;
+  --bg-color-inverted: #1db4aa;
   --primary-color: #211d1d;
-  --secondary-color: #000000;
-  --bg-color-secondary: #1db4aa;
+  --inverted-color: #8c1111;
 }
