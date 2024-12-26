@@ -1,6 +1,6 @@
-import { useTheme } from "./providers/ThemeProvider";
-import { classNames } from "../shared/lib/classNames";
 import { AppRouter } from "./providers/RouterProvider";
+import { useTheme } from "../shared/lib";
+import { classNames } from "../shared/lib";
 
 import "./styles/index.css";
 

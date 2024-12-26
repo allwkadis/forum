@@ -1,0 +1,27 @@
+.Button {
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.text {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.outlined {
+  background: none;
+  border: 1px solid var(--primary-color);
+}
+
+.small {
+  padding: 4px 5px;
+}
+
+.medium {
+  padding: 5px 15px;
+}
+
+.large {
+  padding: 7px 21px;
+}
