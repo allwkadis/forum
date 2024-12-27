@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { classNames } from "../../../shared/lib/classNames";
 import { AppLink } from "../../../shared/ui/AppLink";
 
@@ -8,6 +9,8 @@ interface INavbarProprs {
 }
 
 export const Navbar = ({ className }: INavbarProprs) => {
+  const { t } = useTranslation("navbar");
+
   return (
     <div className={classNames(cls.navbar, {}, [className as string])}>
       <p>FORUM</p>
@@ -16,12 +19,12 @@ export const Navbar = ({ className }: INavbarProprs) => {
           <ul className={cls.links}>
             <li>
               <AppLink to={"/main"} variant="primary">
-                main
+                {t("главная")}
               </AppLink>
             </li>
             <li>
               <AppLink to={"/about"} variant="primary">
-                about
+                {t("о нас")}
               </AppLink>
             </li>
           </ul>

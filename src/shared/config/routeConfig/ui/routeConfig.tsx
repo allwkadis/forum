@@ -3,7 +3,7 @@ import { AboutPage } from "../../../../pages/AboutPage";
 import { MainPage } from "../../../../pages/MainPage";
 import { Layout } from "../../../ui/Layout";
 import { IRoutes } from "../types";
-
+import { Suspense } from "react";
 
 enum AppRoutes {
   MAIN = "/main",
@@ -28,8 +28,9 @@ export const router = createBrowserRouter([
     children: [
       ...routes.map((route) => ({
         path: route.path,
-        element: route.element,
-        children: route.children
+        element: (
+          <Suspense fallback={<div>loading...</div>}>{route.element}</Suspense>
+        ),
       })),
     ],
   },

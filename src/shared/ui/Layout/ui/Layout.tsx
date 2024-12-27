@@ -5,6 +5,7 @@ import { Navbar } from "../../../../widgets/Navbar";
 import { Sidebar } from "../../../../widgets/Sidebar";
 
 import cls from "./Layout.module.css";
+import { Container } from "../../Container";
 
 export const Layout = () => {
   return (
@@ -14,11 +15,12 @@ export const Layout = () => {
         <div className={cls["content-page"]}>
           <Sidebar />
           <div className={cls["page-wrapper"]}>
-            <Outlet />
+            <Container>
+              <Outlet />
+            </Container>
           </div>
         </div>
       </main>
-      
     </div>
   );
 };

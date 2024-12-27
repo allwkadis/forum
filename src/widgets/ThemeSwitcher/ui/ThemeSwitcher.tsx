@@ -6,6 +6,7 @@ import { useTheme } from "../../../shared/lib";
 import { classNames } from "../../../shared/lib";
 
 import cls from "./ThemeSwitcher.module.css";
+import { Button } from "../../../shared/ui/Button";
 
 interface IThemeSwitcherProps {
   className?: string;
@@ -16,16 +17,17 @@ export const ThemeSwitcher = ({ className }: IThemeSwitcherProps) => {
 
   return (
     <div>
-      <button
+      <Button
         className={classNames(cls.ThemeSwitcher, {}, [className as string])}
         onClick={toogleTheme}
+        variant="text"
       >
         {theme === THEME.LIGHT ? (
           <LightModeIcon />
         ) : (
           <Brightness4OutlinedIcon />
         )}
-      </button>
+      </Button>
     </div>
   );
 };

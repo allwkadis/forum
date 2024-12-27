@@ -17,5 +17,5 @@
   --navbar-height: 50px;
   --sidebar-height: calc(100vh - var(--navbar-height));
   --sidebar-width: 300px;
-  --sidebar-collapsed-width: 80px;
+  --sidebar-collapsed-width: 120px;
 }
