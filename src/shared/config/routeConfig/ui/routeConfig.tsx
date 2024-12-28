@@ -5,18 +5,18 @@ import { Layout } from "../../../ui/Layout";
 import { IRoutes } from "../types";
 import { Suspense } from "react";
 
-enum AppRoutes {
+export enum APP_ROUTES {
   MAIN = "/main",
   ABOUT = "/about",
 }
 
 const routes: IRoutes[] = [
   {
-    path: AppRoutes.ABOUT,
+    path: APP_ROUTES.ABOUT,
     element: <AboutPage />,
   },
   {
-    path: AppRoutes.MAIN,
+    path: APP_ROUTES.MAIN,
     element: <MainPage />,
   },
 ];

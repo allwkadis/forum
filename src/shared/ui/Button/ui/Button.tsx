@@ -21,6 +21,7 @@ export const Button = ({
 }: IButtonsProps) => {
   return (
     <button
+      type="button"
       {...addProps}
       className={classNames(cls.Button, {}, [
         additionalClass as string,

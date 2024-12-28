@@ -4,9 +4,15 @@ import { AppLink } from "../../../shared/ui/AppLink";
 
 import cls from "./Navbar.module.css";
 
+type navBarlinksType = { title: string; url: string };
 interface INavbarProprs {
   className?: string;
 }
+
+const navbarLinks: navBarlinksType[] = [
+  { title: "главная", url: "/main" },
+  { title: "о нас", url: "/about" },
+];
 
 export const Navbar = ({ className }: INavbarProprs) => {
   const { t } = useTranslation("navbar");
@@ -17,16 +23,15 @@ export const Navbar = ({ className }: INavbarProprs) => {
       <div className={cls["navbar-nav"]}>
         <nav>
           <ul className={cls.links}>
-            <li>
-              <AppLink to={"/main"} variant="primary">
-                {t("главная")}
-              </AppLink>
-            </li>
-            <li>
-              <AppLink to={"/about"} variant="primary">
-                {t("о нас")}
-              </AppLink>
-            </li>
+            {navbarLinks.map((link) => {
+              return (
+                <li>
+                  <AppLink to={link.url} variant="primary" key={link.url}>
+                    {t(link.title)}
+                  </AppLink>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </div>

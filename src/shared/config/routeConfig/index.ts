@@ -1,1 +1,1 @@
-export { router} from './ui/routeConfig'
+export { router, APP_ROUTES} from './ui/routeConfig'
