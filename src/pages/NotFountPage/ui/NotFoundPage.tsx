@@ -7,6 +7,10 @@ import { useEffect } from "react";
 export const NotFoundPage = () => {
   const { t } = useTranslation("not-found");
 
+  useEffect(() => {
+    throw new Error("test");
+  }, []);
+
   return (
     <div className={classNames(cls.NotFoundPage, {}, [])}>
       {t("страница не найдена")}

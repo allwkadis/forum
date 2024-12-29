@@ -1,0 +1,13 @@
+.ErrorPage {
+  min-height: calc(100vh - var(--navbar-height));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.ErrorPage__content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}

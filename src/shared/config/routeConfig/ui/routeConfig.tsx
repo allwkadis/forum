@@ -6,6 +6,7 @@ import { IRoutes } from "../types";
 import { Suspense } from "react";
 import { NotFoundPage } from "../../../../pages/NotFountPage";
 import { PageLoader } from "../../../../widgets/PageLoader/ui/PageLoader";
+import { ErrorBoundary } from "../../../../app/providers/ErrorBoundary";
 
 export enum APP_ROUTES {
   MAIN = "/main",
@@ -31,11 +32,19 @@ export const router = createBrowserRouter([
     children: [
       {
         path: APP_ROUTES.NOT_FOUND,
-        element: <NotFoundPage />,
+        element: (
+          <ErrorBoundary>
+            <NotFoundPage />
+          </ErrorBoundary>
+        ),
       },
       ...routes.map((route) => ({
         path: route.path,
-        element: <Suspense fallback={<PageLoader />}>{route.element}</Suspense>,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <ErrorBoundary>{route.element}</ErrorBoundary>
+          </Suspense>
+        ),
       })),
     ],
   },
