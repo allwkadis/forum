@@ -5,11 +5,13 @@ import cls from "./Button.module.css";
 
 type ButtonVariant = "outlined" | "text";
 type ButtonSize = "large" | "medium" | "small";
+
 interface IButtonsProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  additionalClass?: string;
   variant?: ButtonVariant;
   size?: ButtonSize;
+  additionalClass?: string;
+  square?: boolean;
 }
 
 export const Button = ({
@@ -17,17 +19,20 @@ export const Button = ({
   additionalClass,
   variant = "outlined",
   size = "medium",
+  square = false,
   ...addProps
 }: IButtonsProps) => {
   return (
     <button
       type="button"
+      className={classNames(
+        cls.Button,
+        {
+          [cls.square]: square,
+        },
+        [additionalClass as string, cls[variant as string], cls[size as string]]
+      )}
       {...addProps}
-      className={classNames(cls.Button, {}, [
-        additionalClass as string,
-        cls[variant as string],
-        cls[size as string],
-      ])}
     >
       {children}
     </button>

@@ -1,6 +1,7 @@
 import { Link, LinkProps } from "react-router";
 
 import { classNames } from "../../../lib/classNames";
+
 import cls from "./AppLink.module.css";
 
 type AppLinKVariant = "primary" | "secondary";

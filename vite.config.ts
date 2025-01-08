@@ -19,9 +19,5 @@ export default defineConfig({
       include: "**/*.svg",
     }),
   ],
-  test: {
-    globals: true,
-    environment: "happy-dom",
-    setupFiles: "/config/jest/setup.ts",
-  },
+
 });

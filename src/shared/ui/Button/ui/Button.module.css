@@ -16,12 +16,20 @@
 
 .small {
   padding: 4px 5px;
+  font: var(--font-s);
 }
 
 .medium {
   padding: 5px 15px;
+  font: var(--font-m);
 }
 
 .large {
   padding: 7px 21px;
+  font: var(--font-l);
+}
+
+.square {
+  height: 40px;
+  width: 40px;
 }
