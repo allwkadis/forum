@@ -5,6 +5,7 @@ import { AppLink } from "../../../shared/ui/AppLink";
 import cls from "./Navbar.module.css";
 
 type navBarlinksType = { title: string; url: string };
+
 interface INavbarProprs {
   className?: string;
 }

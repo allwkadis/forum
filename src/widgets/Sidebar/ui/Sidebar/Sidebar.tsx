@@ -4,9 +4,10 @@ import { Button } from "../../../../shared/ui/Button";
 import { ThemeSwitcher } from "../../../ThemeSwitcher";
 import { classNames } from "../../../../shared/lib";
 
-import cls from "./Sidebar.module.css";
 import { LangSwitcher } from "../../../LangSwitcher";
 import { useTranslation } from "react-i18next";
+
+import cls from "./Sidebar.module.css";
 
 interface ISidebarProps {
   className?: string;
@@ -14,7 +15,7 @@ interface ISidebarProps {
 
 export const Sidebar = ({ className }: ISidebarProps) => {
   const [collapsed, setCollapsed] = useState<boolean>(false);
-  const { t } = useTranslation("sidebar");
+  // const { t } = useTranslation("sidebar");
   const toogleCollapsed = () => setCollapsed((prev) => !prev);
 
   return (
@@ -23,10 +24,21 @@ export const Sidebar = ({ className }: ISidebarProps) => {
         className as string,
       ])}
     >
-      <Button onClick={toogleCollapsed} size="small">
-        {t("коллапс")}
+      <Button
+        onClick={toogleCollapsed}
+        size="small"
+        additionalClass={cls.collapsedBtn}
+        variant="outlined"
+      >
+        {collapsed ? ">" : "< "}
       </Button>
-      <div className={cls["switchers"]}>
+      <div
+        className={classNames(
+          cls.switchers,
+          { [cls["switchers-collapsed"]]: collapsed },
+          []
+        )}
+      >
         <ThemeSwitcher />
         <LangSwitcher />
       </div>

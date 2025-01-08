@@ -17,3 +17,15 @@
   justify-content: center;
   width: 100%;
 }
+
+.switchers-collapsed {
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.collapsedBtn {
+  position: absolute;
+  right: -20px;
+  bottom: 32px;
+}
