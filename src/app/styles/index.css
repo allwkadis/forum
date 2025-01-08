@@ -3,9 +3,12 @@
 @import "./themes/dark.css";
 @import "./themes/light.css";
 
+
+
+
 .app {
-  min-height: 100vh;
   font: var(--font-m);
   color: var(--primary-color);
   background: var(--bg-color);
+  min-height: 100vh;
 }
