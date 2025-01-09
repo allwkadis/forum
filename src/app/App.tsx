@@ -3,6 +3,7 @@ import { useTheme } from "../shared/lib";
 import { classNames } from "../shared/lib";
 
 import "../shared/config/i18n/i18n";
+import { StoreProvider } from "./providers/StoreProvider";
 
 // import "./styles/index.css";
 
@@ -11,7 +12,7 @@ function App() {
 
   return (
     <div className={classNames("app", {}, [])}>
-      <AppRouter />
+        <AppRouter />
     </div>
   );
 }

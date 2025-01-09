@@ -7,15 +7,16 @@ import { ErrorBoundary } from "./app/providers/ErrorBoundary/index.ts";
 import App from "./app/App.tsx";
 
 import "./app/styles/index.css";
-
-
+import { StoreProvider } from "./app/providers/StoreProvider/index.ts";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ThemeProvider>
-      <ErrorBoundary>
-        <App />
-      </ErrorBoundary>
-    </ThemeProvider>
+    <StoreProvider>
+      <ThemeProvider>
+        <ErrorBoundary>
+          <App />
+        </ErrorBoundary>
+      </ThemeProvider>
+    </StoreProvider>
   </StrictMode>
 );
