@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { classNames } from "../../../lib";
+import { classNames, useTheme } from "../../../lib";
 import { Portal } from "../../Portal";
 import cls from "./Modal.module.css";
 
@@ -49,13 +49,16 @@ export const Modal = ({ children, className, isOpen, onClose }: ModalProps) => {
     };
   }, [isOpen, onKeyDown]);
 
+
+  const {theme } = useTheme()
+
   return (
     <Portal>
       <div
         className={classNames(
           cls.Modal,
           { [cls.opened]: isOpen, [cls.isClosing]: isClosed },
-          [className as string]
+          [className as string, theme as string]
         )}
       >
         <div className={cls.overlay} onClick={closeHandler}>

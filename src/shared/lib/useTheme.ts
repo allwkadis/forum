@@ -17,6 +17,7 @@ export const useTheme = (): IUseTheme => {
   const toogleTheme = () => {
     const newTheme = theme === THEME.DARK ? THEME.LIGHT : THEME.DARK;
     setTheme(newTheme);
+    document.body.className = newTheme;
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
 

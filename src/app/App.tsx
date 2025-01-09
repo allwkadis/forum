@@ -7,10 +7,10 @@ import "../shared/config/i18n/i18n";
 // import "./styles/index.css";
 
 function App() {
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
 
   return (
-    <div className={classNames("app", {}, [theme])}>
+    <div className={classNames("app", {}, [])}>
       <AppRouter />
     </div>
   );

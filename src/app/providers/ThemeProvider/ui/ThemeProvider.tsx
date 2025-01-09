@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useLayoutEffect, useMemo, useState } from "react";
 import {
   LOCAL_STORAGE_THEME_KEY,
   THEME,
@@ -22,6 +22,10 @@ export const ThemeProvider = ({ children }: IThemeProviderProps) => {
     }),
     [theme]
   );
+
+  useLayoutEffect(() => {
+    document.body.className = theme;
+  }, []);
 
   return (
     <ThemeContext.Provider value={defaultContextValue}>
