@@ -1,4 +1,11 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "username": "allwkadis",
+      "password": "123"
+    }
+  ],
   "posts": [
     { "id": 1, "title": "json-server", "author": "typicode" },
     { "id": 228, "title": "yooo) rap4ik man)))", "author": "2pac" }

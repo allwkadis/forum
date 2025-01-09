@@ -1,9 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import { CounterActions, CounterSelectors } from "../model/slice/CounterSlice";
-
+import { CounterActions } from "../model/slice/CounterSlice";
+import { selectCounter } from "../model/selectors";
 
 import cls from "./Counter.module.css";
-import { useAppDispatch, useAppSelector } from "../../../app/providers/StoreProvider";
+import {
+  useAppDispatch,
+  useAppSelector,
+} from "../../../app/providers/StoreProvider";
 
 export const Counter = () => {
   const dispatch = useAppDispatch();
@@ -15,8 +18,8 @@ export const Counter = () => {
     dispatch(CounterActions.decrement());
   };
 
-  const value = useSelector(CounterSelectors.selectCounter);
-  const test = useAppSelector(CounterSelectors.selectCounter);
+  const test = useAppSelector((state) => selectCounter(state))
+
 
   return (
     <div>

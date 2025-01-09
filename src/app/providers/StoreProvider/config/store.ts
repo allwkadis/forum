@@ -1,9 +1,12 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { counterSlice } from "../../../../entities/Counter";
 import { useDispatch, useSelector } from "react-redux";
+
+import { counterSlice } from "../../../../entities/Counter";
+import { userSlice } from "../../../../entities/User";
 
 const RootReducer = combineReducers({
   [counterSlice.name]: counterSlice.reducer,
+  [userSlice.name]: userSlice.reducer,
 });
 
 export const store = configureStore({

@@ -1,0 +1,7 @@
+.InputWrapper {
+  display: flex;
+}
+
+.Input {
+  width: 100%;
+}
