@@ -10,8 +10,14 @@ export const LoginForm = () => {
   return (
     <div className={classNames(cls.LoginForm)}>
       <div className={cls.inputs}>
-        <Input type="text" />
-        <Input type="text" />
+        <label>
+          {t("Логин")}
+          <Input type="text" />
+        </label>
+        <label>
+          {t("Пароль")}
+          <Input type="text" />
+        </label>
       </div>
       <Button className={cls.loginBtn}>{t("Войти")}</Button>
     </div>

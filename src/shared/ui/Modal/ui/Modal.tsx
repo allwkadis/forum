@@ -8,9 +8,17 @@ interface ModalProps {
   className?: string;
   isOpen: boolean;
   onClose?: () => void;
+  lazy: boolean;
 }
 
-export const Modal = ({ children, className, isOpen, onClose }: ModalProps) => {
+export const Modal = ({
+  children,
+  className,
+  isOpen,
+  onClose,
+  lazy,
+}: ModalProps) => {
+  const [isMounted, setIsMounted] = useState(false);
   const contetClickHandler = (e: React.MouseEvent) => e.stopPropagation();
 
   const closeHandler = () => {
@@ -30,6 +38,12 @@ export const Modal = ({ children, className, isOpen, onClose }: ModalProps) => {
 
   useEffect(() => {
     if (isOpen) {
+      setIsMounted(true);
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (isOpen) {
       window.addEventListener("keydown", onKeyDown);
     }
 
@@ -38,14 +52,16 @@ export const Modal = ({ children, className, isOpen, onClose }: ModalProps) => {
     };
   }, [isOpen, onKeyDown]);
 
-  const { theme } = useTheme();
+  if(lazy && !isMounted) {
+    return null
+  }
+
 
   return (
     <Portal>
       <div
         className={classNames(cls.Modal, { [cls.opened]: isOpen }, [
           className as string,
-          theme as string,
         ])}
       >
         <div className={cls.overlay} onClick={closeHandler}>
