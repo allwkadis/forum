@@ -3,8 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { counterSlice } from "../../../../entities/Counter";
 import { userSlice } from "../../../../entities/User";
+import { loginSlice } from "../../../../features/AuthByUserName/model/slice/LoginSlice";
 
 const RootReducer = combineReducers({
+  [loginSlice.name]: loginSlice.reducer,
   [counterSlice.name]: counterSlice.reducer,
   [userSlice.name]: userSlice.reducer,
 });

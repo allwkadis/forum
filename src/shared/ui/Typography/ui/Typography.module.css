@@ -1,0 +1,49 @@
+.Typography {
+}
+
+.h1 {
+  font: var(--font-l);
+  font-size: 32px;
+}
+
+.h2 {
+  font: var(--font-l);
+  font-size: 24px;
+}
+
+.h3 {
+  font: var(--font-l);
+  font-size: 19px;
+}
+
+.subtitle1 {
+  font: var(--font-m);
+  color: var(--primary-color);
+}
+
+.subtitle2 {
+  font: var(--font-m);
+  color: var(--inverted-color);
+}
+
+.body1 {
+  font: var(--font-s);
+  color: var(--primary-color);
+}
+
+.body2 {
+  font: var(--font-s);
+  color: var(--inverted-color);
+}
+
+.red {
+  color: var(--red-light);
+}
+
+.primary {
+  color: var(--primary-color);
+}
+
+.secondary {
+  color: var(--inverted-color);
+}

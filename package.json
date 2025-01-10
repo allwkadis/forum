@@ -18,6 +18,7 @@
     "@mui/icons-material": "^6.3.0",
     "@mui/material": "^6.3.0",
     "@reduxjs/toolkit": "^2.5.0",
+    "axios": "^1.7.9",
     "happy-dom": "^16.0.1",
     "i18next": "^24.2.0",
     "i18next-browser-languagedetector": "^8.0.2",

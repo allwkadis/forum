@@ -3,6 +3,10 @@
   color: var(--primary-color);
 }
 
+.Button:disabled {
+  opacity: 0.5;
+}
+
 .text {
   border: none;
   background: none;

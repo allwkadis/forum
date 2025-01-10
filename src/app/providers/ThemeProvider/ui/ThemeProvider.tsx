@@ -4,6 +4,8 @@ import {
   THEME,
   ThemeContext,
 } from "../../../../shared/config/context/ThemeContext";
+import { useAppDispatch } from "../../StoreProvider";
+import { userSlice } from "../../../../entities/User";
 
 interface IThemeProviderProps {
   children?: React.ReactNode;
@@ -14,7 +16,7 @@ const defaultTheme =
 
 export const ThemeProvider = ({ children }: IThemeProviderProps) => {
   const [theme, setTheme] = useState<THEME>(defaultTheme);
-
+  const dispatch = useAppDispatch();
   const defaultContextValue = useMemo(
     () => ({
       theme: theme,
@@ -25,6 +27,7 @@ export const ThemeProvider = ({ children }: IThemeProviderProps) => {
 
   useLayoutEffect(() => {
     document.body.className = theme;
+    dispatch(userSlice.actions.intitAuthData());
   }, []);
 
   return (

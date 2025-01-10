@@ -19,9 +19,6 @@ export const counterSlice = createSlice({
       state.value += action.payload;
     },
   },
-  selectors: {
-    selectCounter: (state) => state.value,
-  },
 });
 
 export const { actions: CounterActions } = counterSlice;

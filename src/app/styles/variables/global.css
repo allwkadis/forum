@@ -23,4 +23,7 @@
 
 
   --overlay-background-color: rgb(0 0 0 / 50%);
+
+  --red-light: red;
+  --red-dark: rgb(164, 15, 15);
 }

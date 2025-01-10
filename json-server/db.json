@@ -4,6 +4,11 @@
       "id": 1,
       "username": "allwkadis",
       "password": "123"
+    },
+    {
+      "id": 228,
+      "username": "lox",
+      "password": "1234"
     }
   ],
   "posts": [
