@@ -17,7 +17,10 @@ interface INavbarProprs {
 
 export const Navbar = ({ className }: INavbarProprs) => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+
   const dispatch = useAppDispatch();
+  const authData = useAppSelector(userSelectors.selectAuthData);
+  const { t } = useTranslation("navbar");
 
   const onCloseModal = useCallback(() => {
     setIsAuthModalOpen(false);
@@ -31,9 +34,6 @@ export const Navbar = ({ className }: INavbarProprs) => {
     dispatch(userActions.logOut());
     setIsAuthModalOpen(false);
   }, []);
-
-  const authData = useAppSelector(userSelectors.selectAuthData);
-  const { t } = useTranslation("navbar");
 
   if (authData) {
     return (
