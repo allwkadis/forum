@@ -24,6 +24,7 @@ const LoginForm = memo(() => {
   const loginPassword = useAppSelector(selectPassword);
   const loginIsLoadingValue = useAppSelector(selectIsLoading);
   const loginError = useAppSelector(selectError);
+
   const onChangeUserName = useCallback(
     (value: string) => {
       dispatch(LoginActions.setUserName(value));

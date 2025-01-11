@@ -7,10 +7,12 @@ import { Suspense } from "react";
 import { NotFoundPage } from "../../../../pages/NotFountPage";
 import { PageLoader } from "../../../../widgets/PageLoader/ui/PageLoader";
 import { ErrorBoundary } from "../../../../app/providers/ErrorBoundary";
+import { ProfilePage } from "../../../../pages/ProfilePage";
 
 export enum APP_ROUTES {
   MAIN = "/main",
   ABOUT = "/about",
+  PROFILE = "profile",
   NOT_FOUND = "*",
 }
 
@@ -22,6 +24,10 @@ const routes: IRoutes[] = [
   {
     path: APP_ROUTES.MAIN,
     element: <MainPage />,
+  },
+  {
+    path: APP_ROUTES.PROFILE,
+    element: <ProfilePage />,
   },
 ];
 

@@ -28,13 +28,13 @@
   bottom: 32px;
 }
 
-.link-info {
+/* .link-info {
   display: flex;
   align-items: center;
   gap: 5px;
   margin-left: 10px;
   cursor: pointer;
-}
+} */
 
 .collapsed {
   width: var(--sidebar-collapsed-width);
@@ -51,8 +51,12 @@
     width: 0;
   }
 
-  .link-info {
+  .links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px;
     justify-content: center;
-    margin-left: 0;
+    align-items: center;
   }
 }

@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { memo, useCallback, useState } from "react";
 import { classNames } from "../../../shared/lib/classNames";
 
 import cls from "./Navbar.module.css";
@@ -16,7 +16,7 @@ interface INavbarProprs {
   className?: string;
 }
 
-export const Navbar = ({ className }: INavbarProprs) => {
+export const Navbar = memo(({ className }: INavbarProprs) => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
   const dispatch = useAppDispatch();
@@ -68,4 +68,4 @@ export const Navbar = ({ className }: INavbarProprs) => {
       <LoginModal isOpen={isAuthModalOpen} onClose={onCloseModal} />
     </div>
   );
-};
+});

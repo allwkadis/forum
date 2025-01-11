@@ -16,5 +16,14 @@
     { "id": 228, "title": "yooo) rap4ik man)))", "author": "2pac" }
   ],
   "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstName": "Pavel",
+    "lastName": "Malyshev",
+    "age": 24,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "allwkadis",
+    "avatar": "https://steamuserimages-a.akamaihd.net/ugc/1867303255937200349/BD91E7551BB4C1855783E66B95AFF2D236B9BDB1/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"
+  }
 }

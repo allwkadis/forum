@@ -1,0 +1,23 @@
+.link-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.link-wrapper {
+}
+
+.collapsed {
+  .link-info {
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .link-href {
+    opacity: 0;
+    transition: opacity 0.4s;
+    width: 0;
+  }
+}

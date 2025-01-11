@@ -1,32 +1,30 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
 
 import { Button } from "../../../../shared/ui/Button";
 import { ThemeSwitcher } from "../../../ThemeSwitcher";
 import { classNames } from "../../../../shared/lib";
 
 import { LangSwitcher } from "../../../LangSwitcher";
-import { useTranslation } from "react-i18next";
-
-import { AppLink } from "../../../../shared/ui/AppLink";
 
 import cls from "./Sidebar.module.css";
+import { SidebarItem } from "../SidebarItem/SidebarItem";
 
 interface ISidebarProps {
   className?: string;
 }
 
-// type SidebarLink = { title: string; url: "string" };
-
 const SidebarLinks = [
   { title: "главная", url: "/main", icon: <HomeIcon /> },
   { title: "о нас", url: "/about", icon: <InfoIcon /> },
+  { title: "профиль", url: "/profile", icon: <AccountBoxIcon /> },
 ];
 
-export const Sidebar = ({ className }: ISidebarProps) => {
+export const Sidebar = memo(({ className }: ISidebarProps) => {
   const [collapsed, setCollapsed] = useState<boolean>(false);
-  const { t } = useTranslation("sidebar");
+
   const toogleCollapsed = () => setCollapsed((prev) => !prev);
 
   return (
@@ -41,19 +39,14 @@ export const Sidebar = ({ className }: ISidebarProps) => {
         additionalClass={cls.collapsedBtn}
         variant="outlined"
       >
-        {collapsed ? ">" : "< "}
+        {collapsed ? ">" : "<"}
       </Button>
       <div>
         <ul className={cls.links}>
-          {SidebarLinks.map((link) => {
+          {SidebarLinks.map((item) => {
             return (
               <li>
-                <AppLink to={link.url} variant="primary" key={link.url}>
-                  <div className={cls["link-info"]}>
-                    {link.icon}
-                    <span className={cls["link-href"]}>{t(link.title)}</span>
-                  </div>
-                </AppLink>
+                <SidebarItem item={item} collapsed={collapsed} />
               </li>
             );
           })}
@@ -69,4 +62,4 @@ export const Sidebar = ({ className }: ISidebarProps) => {
       </div>
     </aside>
   );
-};
+});

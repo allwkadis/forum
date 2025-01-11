@@ -7,12 +7,13 @@ import { classNames } from "../../../shared/lib";
 
 import cls from "./ThemeSwitcher.module.css";
 import { Button } from "../../../shared/ui/Button";
+import { memo } from "react";
 
 interface IThemeSwitcherProps {
   className?: string;
 }
 
-export const ThemeSwitcher = ({ className }: IThemeSwitcherProps) => {
+export const ThemeSwitcher = memo(({ className }: IThemeSwitcherProps) => {
   const { theme, toogleTheme } = useTheme();
 
   return (
@@ -30,4 +31,4 @@ export const ThemeSwitcher = ({ className }: IThemeSwitcherProps) => {
       </Button>
     </div>
   );
-};
+});
