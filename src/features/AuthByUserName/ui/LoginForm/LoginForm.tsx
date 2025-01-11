@@ -14,7 +14,7 @@ import { loginByUserName } from "../../model/services/loginByUserName/loginByUse
 import cls from "./LoginForm.module.css";
 import { Typography } from "../../../../shared/ui/Typography";
 
-export const LoginForm = memo(() => {
+const LoginForm = memo(() => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation("LoginForm");
   const { selectUserName, selectPassword, selectIsLoading, selectError } =
@@ -84,3 +84,5 @@ export const LoginForm = memo(() => {
     </div>
   );
 });
+
+export default LoginForm;

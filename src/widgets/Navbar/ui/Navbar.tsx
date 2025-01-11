@@ -10,6 +10,7 @@ import {
   useAppSelector,
 } from "../../../app/providers/StoreProvider";
 import { userActions, userSelectors } from "../../../entities/User";
+import { Button } from "../../../shared/ui/Button";
 
 interface INavbarProprs {
   className?: string;
@@ -42,7 +43,9 @@ export const Navbar = ({ className }: INavbarProprs) => {
         <div className={cls["navbar-nav"]}>
           <nav>
             <ul>
-              <li onClick={onLogout}>{t("Выйти")}</li>
+              <li onClick={onLogout}>
+                <Button variant="text">{t("Выйти")}</Button>
+              </li>
             </ul>
           </nav>
         </div>
@@ -56,7 +59,9 @@ export const Navbar = ({ className }: INavbarProprs) => {
       <div className={cls["navbar-nav"]}>
         <nav>
           <ul>
-            <li onClick={onShowModal}>{t("Войти")}</li>
+            <li onClick={onShowModal}>
+              <Button variant="text">{t("Войти")}</Button>
+            </li>
           </ul>
         </nav>
       </div>
