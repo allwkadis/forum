@@ -48,11 +48,7 @@ export const Input = memo(
     return (
       <div className={classNames(cls.InputWrapper, {}, [className])}>
         <div className={cls.caretWrapper}>
-          {placeholder && (
-            <Typography variant="h3" additionalClass={cls.placeholder}>
-              {placeholder}
-            </Typography>
-          )}
+          {placeholder && <div className={cls.placeholder}>{placeholder}</div>}
           <div className={cls.input}>
             <input
               type={type}

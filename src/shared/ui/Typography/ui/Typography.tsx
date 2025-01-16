@@ -13,17 +13,21 @@ type TypographyVariant =
 
 type TypographyColor = "red" | "primary" | "secondary";
 
+type TypographyAlign = "left" | "right" | "center";
+
 interface TypographyProps {
   children: React.ReactNode;
   variant?: TypographyVariant;
   additionalClass?: string;
   color?: TypographyColor;
+  align?: TypographyAlign;
 }
 
 export const Typography = ({
   children,
   variant = "body1",
   color = "primary",
+  align = "left",
   additionalClass,
 }: TypographyProps) => {
   return (
@@ -31,6 +35,7 @@ export const Typography = ({
       className={classNames(cls.Typography, {}, [
         cls[variant],
         cls[color],
+        cls[align],
         additionalClass,
       ])}
     >

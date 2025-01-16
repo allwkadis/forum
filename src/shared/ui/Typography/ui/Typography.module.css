@@ -1,4 +1,5 @@
 .Typography {
+  width: 100%;
 }
 
 .h1 {
@@ -46,4 +47,16 @@
 
 .secondary {
   color: var(--inverted-color);
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
 }

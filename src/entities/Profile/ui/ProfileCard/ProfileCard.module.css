@@ -3,6 +3,13 @@
   padding: 20px;
 }
 
+.loading,
+.error {
+  display: flex;
+  align-items: center;
+  height: 300px;
+}
+
 .profile_header {
   display: flex;
   justify-content: space-between;

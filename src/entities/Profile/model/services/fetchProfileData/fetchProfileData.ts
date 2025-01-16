@@ -15,6 +15,6 @@ export const fetchProfileData = createAsyncThunk<
     return response.data;
   } catch (e) {
     console.error(e);
-    return rejectWithValue("Неправильный логин или пароль");
+    return rejectWithValue(`Ошибка: ${e}`);
   }
 });

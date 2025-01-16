@@ -11,6 +11,10 @@
   text-shadow: 0 0 0 var(--primary-color);
 }
 
+.Input:disabled {
+  opacity: 0.7;
+}
+
 .caretWrapper {
   flex-grow: 1;
   position: relative;

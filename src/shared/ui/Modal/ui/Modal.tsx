@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { classNames, useTheme } from "../../../lib";
+import { useCallback, useEffect, useState } from "react";
+import { classNames } from "../../../lib";
 import { Portal } from "../../Portal";
 import cls from "./Modal.module.css";
 
@@ -52,17 +52,14 @@ export const Modal = ({
     };
   }, [isOpen, onKeyDown]);
 
-  if(lazy && !isMounted) {
-    return null
+  if (lazy && !isMounted) {
+    return null;
   }
-
 
   return (
     <Portal>
       <div
-        className={classNames(cls.Modal, { [cls.opened]: isOpen }, [
-          className,
-        ])}
+        className={classNames(cls.Modal, { [cls.opened]: isOpen }, [className])}
       >
         <div className={cls.overlay} onClick={closeHandler}>
           <div className={classNames(cls.content)} onClick={contetClickHandler}>
