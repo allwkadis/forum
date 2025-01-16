@@ -31,7 +31,7 @@ export const Typography = ({
       className={classNames(cls.Typography, {}, [
         cls[variant],
         cls[color],
-        additionalClass as string,
+        additionalClass,
       ])}
     >
       {children}

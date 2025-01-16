@@ -9,7 +9,7 @@ interface IContainerProps {
 
 export const Container = ({ className, children }: IContainerProps) => {
   return (
-    <div className={classNames(cls.Container, {}, [className as string])}>
+    <div className={classNames(cls.Container, {}, [className])}>
       {children}
     </div>
   );

@@ -30,7 +30,7 @@ export const Button = ({
         {
           [cls.square]: square,
         },
-        [additionalClass as string, cls[variant as string], cls[size as string]]
+        [additionalClass, cls[variant], cls[size]]
       )}
       {...addProps}
     >

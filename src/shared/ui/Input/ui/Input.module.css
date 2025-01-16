@@ -14,6 +14,16 @@
 .caretWrapper {
   flex-grow: 1;
   position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.placeholder {
+  margin-right: 15px;
+}
+
+.input {
+  position: relative;
 }
 
 .caret {

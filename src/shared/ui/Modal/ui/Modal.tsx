@@ -61,7 +61,7 @@ export const Modal = ({
     <Portal>
       <div
         className={classNames(cls.Modal, { [cls.opened]: isOpen }, [
-          className as string,
+          className,
         ])}
       >
         <div className={cls.overlay} onClick={closeHandler}>

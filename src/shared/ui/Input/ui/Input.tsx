@@ -2,6 +2,7 @@ import { InputHTMLAttributes, memo, useEffect, useState } from "react";
 import { classNames } from "../../../lib";
 
 import cls from "./Input.module.css";
+import { Typography } from "../../Typography";
 
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
@@ -10,6 +11,7 @@ type HTMLInputProps = Omit<
 
 interface InputProps extends HTMLInputProps {
   className?: string;
+  placeholder?: string;
   value?: string;
   onChange?: (value: string) => void;
   autofocus?: boolean;
@@ -44,24 +46,31 @@ export const Input = memo(
     }, [autofocus]);
 
     return (
-      <div className={classNames(cls.InputWrapper, {}, [className as string])}>
+      <div className={classNames(cls.InputWrapper, {}, [className])}>
         <div className={cls.caretWrapper}>
-          <input
-            type={type}
-            value={value}
-            onChange={onChangeHandler}
-            className={cls.Input}
-            onFocus={onFocusHandler}
-            onBlur={onBlurHandler}
-            onSelect={onSelectHandler}
-            {...otherProps}
-          />
-          {isFocused && (
-            <span
-              className={cls.caret}
-              style={{ left: `${coretPosition * CORET_POSTION_FACTOR}px` }}
-            />
+          {placeholder && (
+            <Typography variant="h3" additionalClass={cls.placeholder}>
+              {placeholder}
+            </Typography>
           )}
+          <div className={cls.input}>
+            <input
+              type={type}
+              value={value}
+              onChange={onChangeHandler}
+              className={cls.Input}
+              onFocus={onFocusHandler}
+              onBlur={onBlurHandler}
+              onSelect={onSelectHandler}
+              {...otherProps}
+            />
+            {isFocused && (
+              <span
+                className={cls.caret}
+                style={{ left: `${coretPosition * CORET_POSTION_FACTOR}px` }}
+              />
+            )}
+          </div>
         </div>
       </div>
     );

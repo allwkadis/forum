@@ -15,7 +15,7 @@ interface IAppLinkProps extends LinkProps {
 export const AppLink = ({
   children,
   to,
-  variant,
+  variant = 'primary',
   additionalClass,
   ...props
 }: IAppLinkProps) => {
@@ -23,8 +23,8 @@ export const AppLink = ({
     <Link
       to={to}
       className={classNames(cls.AppLink, {}, [
-        additionalClass as string,
-        cls[variant as string],
+        additionalClass,
+        cls[variant],
       ])}
       {...props}
     >
