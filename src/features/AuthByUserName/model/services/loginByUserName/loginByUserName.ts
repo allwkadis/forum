@@ -1,9 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 
 import { User, userActions } from "../../../../../entities/User";
 
 import { USER_LOCALSTORAGE_KEY } from "../../../../../shared/constants/localStorage";
+import { ThunkConfig } from "../../../../../app/providers/StoreProvider";
 
 interface LoginByUserNameProps {
   username: string;
@@ -13,20 +13,27 @@ interface LoginByUserNameProps {
 export const loginByUserName = createAsyncThunk<
   User,
   LoginByUserNameProps,
-  { rejectValue: string }
+  ThunkConfig<string>
 >("login/loginByUserName", async (authData, thunkAPI) => {
+  const { dispatch, extra, rejectWithValue } = thunkAPI;
+
   try {
-    const response = await axios.post("http://localhost:8000/login", authData);
+    const response = await extra.api.post("/login", authData);
 
     if (!response.data) throw new Error("empty Data");
 
-    window.localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data ))
-    thunkAPI.dispatch(userActions.setAuthData(response.data))
+    window.localStorage.setItem(
+      USER_LOCALSTORAGE_KEY,
+      JSON.stringify(response.data)
+    );
 
+    dispatch(userActions.setAuthData(response.data));
+
+    // window.location.pathname = "/profile";
 
     return response.data;
   } catch (e) {
     console.error(e);
-    return thunkAPI.rejectWithValue("Неправильный логин или пароль");
+    return rejectWithValue("Неправильный логин или пароль");
   }
 });

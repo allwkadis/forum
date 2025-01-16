@@ -1,3 +1,5 @@
+
+
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -5,6 +7,8 @@ import { counterSlice } from "../../../../entities/Counter";
 import { userSlice } from "../../../../entities/User";
 import { loginSlice } from "../../../../features/AuthByUserName/model/slice/LoginSlice";
 import { profileSlice } from "../../../../entities/Profile";
+import { $api } from "../../../../shared/api/api";
+
 
 const RootReducer = combineReducers({
   [loginSlice.name]: loginSlice.reducer,
@@ -13,8 +17,16 @@ const RootReducer = combineReducers({
   [profileSlice.name]: profileSlice.reducer,
 });
 
+
 export const store = configureStore({
   reducer: RootReducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    thunk: {
+      extraArgument: {
+        api: $api,
+      }
+    },
+  })
 });
 
 export type RootState = ReturnType<typeof store.getState>;

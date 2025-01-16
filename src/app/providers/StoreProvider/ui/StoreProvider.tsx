@@ -8,3 +8,6 @@ interface StoreProviderProps {
 export const StoreProvider = ({ children }: StoreProviderProps) => {
   return <Provider store={store}>{children}</Provider>;
 };
+
+
+// 8:28
