@@ -16,6 +16,7 @@ import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 import cls from "./ProfilePage.module.css";
 import { Currency } from "../../../entities/Currency";
 import { Country } from "../../../entities/Country";
+import { Typography } from "../../../shared/ui/Typography";
 
 interface ProfilePageProps {
   additionalClass?: string;
@@ -29,6 +30,9 @@ const ProfilePage = ({ additionalClass }: ProfilePageProps) => {
   );
   const profileError = useAppSelector(profileSelectors.selectProfileError);
   const readonly = useAppSelector(profileSelectors.selectProfileReadonly);
+  const validateErrors = useAppSelector(
+    profileSelectors.selectProfileValidateErrors
+  );
 
   const onChangeUserName = useCallback((value?: string) => {
     dispatch(profileActions.updateProfile({ username: value ?? "" }));
@@ -66,9 +70,15 @@ const ProfilePage = ({ additionalClass }: ProfilePageProps) => {
     dispatch(fetchProfileData());
   }, []);
 
+  validateErrors?.forEach((error) => console.log(error));
+
   return (
     <div className={classNames(cls.ProfilePage, {}, [additionalClass])}>
       <ProfilePageHeader readonly={readonly} />
+      {validateErrors?.length &&
+        validateErrors?.map((error) => (
+          <Typography color="red">{error}</Typography>
+        ))}
       <ProfileCard
         data={profileData}
         isLoading={profileIsLoading}

@@ -1,5 +1,6 @@
-import { Country } from "../../../../shared/constants/common";
+import { Country } from "../../../Country";
 import { Currency } from "../../../Currency";
+import { ValidateProfileError } from "../services/validateProfileData/validateProfileData";
 
 export interface Profile {
   firstName?: string;
@@ -18,4 +19,5 @@ export interface ProfileShema {
   profileData?: Profile;
   formData?: Profile;
   readonly: boolean;
+  validateErrors?: ValidateProfileError[];
 }

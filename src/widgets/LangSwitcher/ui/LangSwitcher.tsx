@@ -15,5 +15,5 @@ export const LangSwitcher = memo(() => {
 
   const toogleLang = (value: string) => i18n.changeLanguage(value as lang);
 
-  return <Select options={langs} onChange={toogleLang} />;
+  return <Select options={langs} onChange={toogleLang} value={i18n.language}/>;
 });

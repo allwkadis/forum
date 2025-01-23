@@ -8,6 +8,7 @@ const initialState: ProfileShema = {
   error: undefined,
   profileData: undefined,
   readonly: true,
+  validateErrors: undefined,
 };
 
 export const profileSlice = createSlice({
@@ -44,17 +45,23 @@ export const profileSlice = createSlice({
       }),
       builder.addCase(updateProfileData.pending, (state) => {
         state.isLoading = true;
-        state.error = undefined;
+        state.validateErrors = undefined;
       }),
-      builder.addCase(updateProfileData.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.profileData = action.payload;
-        state.formData = action.payload;
-        state.readonly = true;
-      }),
+      builder.addCase(
+        updateProfileData.fulfilled,
+        (state, action: PayloadAction<Profile>) => {
+          state.isLoading = false;
+          state.profileData = action.payload;
+          state.formData = action.payload;
+          state.readonly = true;
+          state.validateErrors = undefined;
+        }
+      ),
       builder.addCase(updateProfileData.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.payload;
+        state.readonly = true;
+        state.formData = state.profileData;
+        state.validateErrors = action.payload;
       });
   },
   selectors: {
@@ -63,6 +70,7 @@ export const profileSlice = createSlice({
     selectProfileLoading: (state) => state.isLoading,
     selectProfileError: (state) => state.error,
     selectProfileReadonly: (state) => state.readonly,
+    selectProfileValidateErrors: (state) => state.validateErrors,
   },
 });
 
