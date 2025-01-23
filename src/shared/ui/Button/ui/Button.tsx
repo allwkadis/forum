@@ -3,7 +3,7 @@ import { classNames } from "../../../lib";
 
 import cls from "./Button.module.css";
 
-type ButtonVariant = "outlined" | "text";
+type ButtonVariant = "outlined" | "text" | "outlined-red";
 type ButtonSize = "large" | "medium" | "small";
 
 interface IButtonsProps extends ButtonHTMLAttributes<HTMLButtonElement> {

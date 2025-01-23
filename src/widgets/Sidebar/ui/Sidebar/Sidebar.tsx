@@ -45,7 +45,7 @@ export const Sidebar = memo(({ className }: ISidebarProps) => {
         <ul className={cls.links}>
           {SidebarLinks.map((item) => {
             return (
-              <li>
+              <li key={item.url}>
                 <SidebarItem item={item} collapsed={collapsed} />
               </li>
             );

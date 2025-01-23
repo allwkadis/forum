@@ -1,13 +1,23 @@
 import { useTranslation } from "react-i18next";
+import { memo } from "react";
+
 import { classNames } from "../../../shared/lib";
 
 import cls from "./LangSwitcher.module.css";
-import { memo } from "react";
+
+type lang = "en" | "ru";
+interface langOption {
+  lang: lang;
+  id: number;
+}
+
+const lagns: langOption[] = [
+  { lang: "ru", id: 1 },
+  { lang: "en", id: 2 },
+];
 
 export const LangSwitcher = memo(() => {
   const { i18n } = useTranslation();
-
-  type lang = "en" | "ru";
 
   const toogleLang = (e: React.ChangeEvent<HTMLSelectElement>) =>
     i18n.changeLanguage(e.target.value as lang);
@@ -18,8 +28,9 @@ export const LangSwitcher = memo(() => {
       defaultValue={i18n.language}
       className={classNames(cls.LangSwither, {})}
     >
-      <option>ru</option>
-      <option>en</option>
+      {lagns.map((lang) => {
+        return <option key={lang.id}>{lang.lang}</option>;
+      })}
     </select>
   );
 });

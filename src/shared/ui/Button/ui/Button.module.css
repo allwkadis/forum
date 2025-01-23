@@ -18,6 +18,12 @@
   border: 1px solid var(--primary-color);
 }
 
+.outlined-red {
+  background: none;
+  border: 1px solid var(--red-light);
+  color: var(--red-light);
+}
+
 .small {
   padding: 4px 5px;
   font: var(--font-s);

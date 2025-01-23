@@ -4,3 +4,8 @@
   margin-bottom: 20px;
   align-items: center;
 }
+
+.edit_btn {
+  display: flex;
+  gap: 8px;
+}

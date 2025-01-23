@@ -12,7 +12,7 @@ type HTMLInputProps = Omit<
 interface InputProps extends HTMLInputProps {
   className?: string;
   placeholder?: string;
-  value?: string;
+  value?: string | number;
   onChange?: (value: string) => void;
   autofocus?: boolean;
 }
@@ -48,7 +48,9 @@ export const Input = memo(
     return (
       <div className={classNames(cls.InputWrapper, {}, [className])}>
         <div className={cls.caretWrapper}>
-          {placeholder && <div className={cls.placeholder}>{placeholder}</div>}
+          {placeholder && (
+            <div className={cls.placeholder}>{placeholder + ":"}</div>
+          )}
           <div className={cls.input}>
             <input
               type={type}

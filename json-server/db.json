@@ -12,18 +12,32 @@
     }
   ],
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" },
-    { "id": 228, "title": "yooo) rap4ik man)))", "author": "2pac" }
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 228,
+      "title": "yooo) rap4ik man)))",
+      "author": "2pac"
+    }
   ],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
   "profile": {
     "firstName": "Pavel",
-    "lastName": "Malyshev",
+    "lastName": "Malyshev1212434",
     "age": 24,
-    "currency": "RUB",
-    "country": "Russia",
+    "currency": "EUR",
+    "country": "SPAIN",
     "city": "Moscow",
     "username": "allwkadis",
-    "avatar": "https://steamuserimages-a.akamaihd.net/ugc/1867303255937200349/BD91E7551BB4C1855783E66B95AFF2D236B9BDB1/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"
+    "avatar": "https://cache3.youla.io/files/images/780_780/5e/06/5e06dabf2756ba111e78e146.jpg"
   }
 }
