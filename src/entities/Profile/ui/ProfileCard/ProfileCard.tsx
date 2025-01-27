@@ -6,10 +6,11 @@ import { Typography } from "../../../../shared/ui/Typography";
 import { Input } from "../../../../shared/ui/Input";
 import { Spinner } from "../../../../shared/ui/Spinner";
 
-import cls from "./ProfileCard.module.css";
 import { Avatar } from "../../../../shared/ui/Avatar";
 import { Currency, CurrencySelect } from "../../../Currency";
 import { Country, CountrySelect } from "../../../Country";
+
+import cls from "./ProfileCard.module.css";
 
 interface ProfileCardProps {
   additionsClass?: string;

@@ -2,7 +2,6 @@ import { InputHTMLAttributes, memo, useEffect, useState } from "react";
 import { classNames } from "../../../lib";
 
 import cls from "./Input.module.css";
-import { Typography } from "../../Typography";
 
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,

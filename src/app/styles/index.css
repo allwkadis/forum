@@ -2,6 +2,7 @@
 @import "./variables/global.css";
 @import "./themes/dark.css";
 @import "./themes/light.css";
+@import "./themes/purple.css";
 
 body {
   font: var(--font-m);

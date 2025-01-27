@@ -70,14 +70,14 @@ const ProfilePage = ({ additionalClass }: ProfilePageProps) => {
     dispatch(fetchProfileData());
   }, []);
 
-  validateErrors?.forEach((error) => console.log(error));
-
   return (
     <div className={classNames(cls.ProfilePage, {}, [additionalClass])}>
       <ProfilePageHeader readonly={readonly} />
       {validateErrors?.length &&
         validateErrors?.map((error) => (
-          <Typography color="red">{error}</Typography>
+          <Typography color="red" key={error}>
+            {error}
+          </Typography>
         ))}
       <ProfileCard
         data={profileData}

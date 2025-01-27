@@ -15,11 +15,24 @@ export const useTheme = (): IUseTheme => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const toogleTheme = () => {
-    const newTheme = theme === THEME.DARK ? THEME.LIGHT : THEME.DARK;
+    let newTheme: THEME;
+    switch (theme) {
+      case THEME.DARK:
+        newTheme = THEME.LIGHT;
+        break;
+      case THEME.LIGHT:
+        newTheme = THEME.PURPLE;
+        break;
+      case THEME.PURPLE:
+        newTheme = THEME.DARK;
+        break;
+      default:
+        newTheme = THEME.DARK;
+    }
     setTheme?.(newTheme);
     document.body.className = newTheme;
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
 
-  return { theme: theme || THEME.LIGHT, toogleTheme };
+  return { theme: theme || THEME.DARK, toogleTheme };
 };
