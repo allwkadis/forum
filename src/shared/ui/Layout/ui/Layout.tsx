@@ -7,6 +7,10 @@ import { Container } from "../../Container";
 import cls from "./Layout.module.css";
 
 export const Layout = () => {
+
+  
+
+
   return (
     <div>
       <Navbar />

@@ -7,8 +7,8 @@ import { ErrorBoundary } from "../../../ErrorBoundary";
 import { NotFoundPage } from "../../../../../pages/NotFountPage";
 import { Suspense } from "react";
 import { PageLoader } from "../../../../../widgets/PageLoader/ui/PageLoader";
-import { RequiredAuth } from "../..";
 import { Layout } from "../../../../../shared/ui/Layout";
+import { RequiredAuth } from "../..";
 
 export enum APP_ROUTES {
   MAIN = "/main",
@@ -29,14 +29,13 @@ const routes: IRoutes[] = [
     path: APP_ROUTES.MAIN,
     element: <MainPage />,
   },
-];
-
-const protecredRoutes: IRoutes[] = [
   {
     path: PROTECRED_ROUTES.PROFILE,
     element: <ProfilePage />,
   },
 ];
+
+//поменять архитектуру
 
 export const router = createBrowserRouter([
   {
@@ -51,22 +50,24 @@ export const router = createBrowserRouter([
           </ErrorBoundary>
         ),
       },
+      {
+        path: "/main",
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <ErrorBoundary>
+              <MainPage />
+            </ErrorBoundary>
+          </Suspense>
+        ),
+      },
       ...routes.map((route) => ({
         path: route.path,
         element: (
           <Suspense fallback={<PageLoader />}>
-            <ErrorBoundary>{route.element}</ErrorBoundary>
+            <ErrorBoundary>
+              <RequiredAuth>{route.element}</RequiredAuth>
+            </ErrorBoundary>
           </Suspense>
-        ),
-      })),
-      ...protecredRoutes.map((route) => ({
-        path: route.path,
-        element: (
-          <RequiredAuth>
-            <Suspense fallback={<PageLoader />}>
-              <ErrorBoundary>{route.element}</ErrorBoundary>
-            </Suspense>
-          </RequiredAuth>
         ),
       })),
     ],
