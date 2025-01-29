@@ -6,12 +6,14 @@ import { userSlice } from "../../../../entities/User";
 import { loginSlice } from "../../../../features/AuthByUserName/model/slice/LoginSlice";
 import { profileSlice } from "../../../../entities/Profile";
 import { $api } from "../../../../shared/api/api";
+import { ArticleDetailsSlice } from "../../../../entities/Article/model/slice/ArticleDetailsSlice";
 
 const RootReducer = combineReducers({
   [loginSlice.name]: loginSlice.reducer,
   [counterSlice.name]: counterSlice.reducer,
   [userSlice.name]: userSlice.reducer,
   [profileSlice.name]: profileSlice.reducer,
+  [ArticleDetailsSlice.name]: ArticleDetailsSlice.reducer,
 });
 
 export const store = configureStore({
