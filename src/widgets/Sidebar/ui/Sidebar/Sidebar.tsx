@@ -20,7 +20,11 @@ const SidebarLinks = [
   { title: "главная", url: "/main", icon: <HomeIcon /> },
   { title: "о нас", url: "/about", icon: <InfoIcon /> },
   { title: "профиль", url: "/profile", icon: <AccountBoxIcon /> },
+  { title: "статьи", url: "/articles", icon: <AccountBoxIcon /> },
+  { title: "детали", url: "/article_details", icon: <AccountBoxIcon /> },
 ];
+
+//сделать иконки в зависимости от авторизации
 
 export const Sidebar = memo(({ className }: ISidebarProps) => {
   const [collapsed, setCollapsed] = useState<boolean>(false);

@@ -9,29 +9,44 @@ import { Suspense } from "react";
 import { PageLoader } from "../../../../../widgets/PageLoader/ui/PageLoader";
 import { Layout } from "../../../../../shared/ui/Layout";
 import { RequiredAuth } from "../..";
+import { ArticlePage } from "../../../../../pages/ArticlesPage";
+import { ArticleDetailsPage } from "../../../../../pages/ArticleDetailsPage";
 
-export enum APP_ROUTES {
+export enum PUBLIC_ROUTES {
   MAIN = "/main",
   ABOUT = "/about",
   NOT_FOUND = "*",
 }
 
 export enum PROTECRED_ROUTES {
-  PROFILE = "profile",
+  PROFILE = "/profile",
+  ARTICLES = "/articles",
+  ARTICLE_DETAILS = "/article_details/:id",
 }
 
-const routes: IRoutes[] = [
-  {
-    path: APP_ROUTES.ABOUT,
-    element: <AboutPage />,
-  },
-  {
-    path: APP_ROUTES.MAIN,
-    element: <MainPage />,
-  },
+const privateRoutes: IRoutes[] = [
   {
     path: PROTECRED_ROUTES.PROFILE,
     element: <ProfilePage />,
+  },
+  {
+    path: PROTECRED_ROUTES.ARTICLES,
+    element: <ArticlePage />,
+  },
+  {
+    path: PROTECRED_ROUTES.ARTICLE_DETAILS,
+    element: <ArticleDetailsPage />,
+  },
+];
+
+const publicRoutes: IRoutes[] = [
+  {
+    path: PUBLIC_ROUTES.ABOUT,
+    element: <AboutPage />,
+  },
+  {
+    path: PUBLIC_ROUTES.MAIN,
+    element: <MainPage />,
   },
 ];
 
@@ -43,24 +58,22 @@ export const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: APP_ROUTES.NOT_FOUND,
+        path: PUBLIC_ROUTES.NOT_FOUND,
         element: (
           <ErrorBoundary>
             <NotFoundPage />
           </ErrorBoundary>
         ),
       },
-      {
-        path: "/main",
+      ...publicRoutes.map((route) => ({
+        path: route.path,
         element: (
           <Suspense fallback={<PageLoader />}>
-            <ErrorBoundary>
-              <MainPage />
-            </ErrorBoundary>
+            <ErrorBoundary>{route.element}</ErrorBoundary>
           </Suspense>
         ),
-      },
-      ...routes.map((route) => ({
+      })),
+      ...privateRoutes.map((route) => ({
         path: route.path,
         element: (
           <Suspense fallback={<PageLoader />}>

@@ -1,1 +1,1 @@
-export { router, APP_ROUTES} from './ui/routeConfig'
+export { router, PUBLIC_ROUTES } from "./ui/routeConfig";
