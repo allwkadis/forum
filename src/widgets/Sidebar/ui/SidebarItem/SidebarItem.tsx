@@ -6,6 +6,8 @@ import { SidebarItemType } from "../../model/SidebarItems";
 import { classNames } from "../../../../shared/lib";
 
 import cls from "./SidebarItem.module.css";
+import { useAppSelector } from "../../../../app/providers/StoreProvider";
+import { userSelectors } from "../../../../entities/User";
 
 interface SidebarItemProps {
   item: SidebarItemType;
@@ -14,6 +16,11 @@ interface SidebarItemProps {
 
 export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
   const { t } = useTranslation("sidebar");
+  const auth = useAppSelector(userSelectors.selectAuthData);
+
+  if (item.authOnly && !auth) {
+    return null;
+  }
 
   return (
     <AppLink to={item.url} variant="primary" key={item.url}>
