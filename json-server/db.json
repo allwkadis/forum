@@ -33,7 +33,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -118,7 +120,7 @@
   ],
   "profile": {
     "firstName": "allwkadis",
-    "lastName": "fdsfdsfdfds12",
+    "lastName": "<scrip)>alert(12)<script>",
     "age": 17,
     "currency": "USD",
     "country": "RUSSIA",

@@ -1,3 +1,27 @@
 .ArticleDetails {
   min-height: 100% - var(--navbar-height);
 }
+
+.Article_information {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Article_information__item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.Avatar_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.Article_blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}

@@ -1,6 +1,6 @@
 .Sidebar {
   width: 300px;
-  height: var(--sidebar-height);
+  min-height: var(--sidebar-height);
   background: var(--bg-color-inverted);
   position: relative;
   transition: width 0.3s;
