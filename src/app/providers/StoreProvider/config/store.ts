@@ -7,6 +7,7 @@ import { loginSlice } from "../../../../features/AuthByUserName/model/slice/Logi
 import { profileSlice } from "../../../../entities/Profile";
 import { $api } from "../../../../shared/api/api";
 import { ArticleDetailsSlice } from "../../../../entities/Article/model/slice/ArticleDetailsSlice";
+import { ArticleDetailsCommentsSlice } from "../../../../pages/ArticleDetailsPage/model/slice/ArticleDetailsCommentsSlice";
 
 const RootReducer = combineReducers({
   [loginSlice.name]: loginSlice.reducer,
@@ -14,6 +15,7 @@ const RootReducer = combineReducers({
   [userSlice.name]: userSlice.reducer,
   [profileSlice.name]: profileSlice.reducer,
   [ArticleDetailsSlice.name]: ArticleDetailsSlice.reducer,
+  [ArticleDetailsCommentsSlice.name]: ArticleDetailsCommentsSlice.reducer,
 });
 
 export const store = configureStore({

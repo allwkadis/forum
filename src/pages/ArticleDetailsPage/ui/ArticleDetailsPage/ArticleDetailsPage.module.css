@@ -1,3 +1,12 @@
 .ArticleDetailsPage {
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.ArticleDetailsPage_comments {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

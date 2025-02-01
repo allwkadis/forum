@@ -4,12 +4,14 @@
       "id": 1,
       "username": "allwkadis",
       "password": "123",
+      "avatar": "https://cs14.pikabu.ru/post_img/2022/12/31/5/1672471522185484204.jpg",
       "role": "ADMIN"
     },
     {
       "id": 228,
       "username": "lox",
       "password": "1234",
+      "avatar": "https://avatars.mds.yandex.net/get-vthumb/4321848/c96abc7c8a41193724239df0cdc941ad/800x450",
       "role": "USER"
     }
   ],
