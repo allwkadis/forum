@@ -18,7 +18,7 @@ export const ArticleImageBlockComponent = memo(
         ])}
       >
         <img src={block.src} className={cls.img} alt={block.title} />
-        {block.title && <Typography>{block.title}</Typography>}
+        {block.title && <Typography align="center">{block.title}</Typography>}
       </div>
     );
   }

@@ -3,6 +3,7 @@
   padding: 20px;
   position: relative;
   background: var(--code-bg);
+  overflow: auto;
 }
 
 .copy_btn {

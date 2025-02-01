@@ -5,6 +5,7 @@
 
 .Button:hover {
   opacity: 0.7;
+  fill-opacity: 0.7;
 }
 
 .Button:disabled {
