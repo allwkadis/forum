@@ -9,7 +9,7 @@
     },
     {
       "id": 228,
-      "username": "lox",
+      "username": "aboba",
       "password": "1234",
       "avatar": "https://avatars.mds.yandex.net/get-vthumb/4321848/c96abc7c8a41193724239df0cdc941ad/800x450",
       "role": "USER"
@@ -23,8 +23,8 @@
     },
     {
       "id": 228,
-      "title": "yooo) rap4ik man)))",
-      "author": "2pac"
+      "title": "kvaka",
+      "author": "baka"
     }
   ],
   "articles": [
@@ -35,9 +35,7 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
